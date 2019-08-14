@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head> 
+
+	<title> Gpa Calculator </title>
+	<link rel="stylesheet" type="text/css" href="GpaCalculatorV2.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script>
+	function ConvertGrade(classGrade){
+		var myClass = classGrade 
+		if (myClass == "A" || myClass == "A-" || myClass ==  "A+"){
+//			classUnit = 4;
+			return 4;
+		}  
+		if (myClass == "B" || myClass == "B-" || myClass ==  "B+"){
+//			classUnit = 3;
+			return 3;
+		}
+		if (myClass == "C" || myClass == "C-" || myClass ==  "C+"){
+//			classUnit = 2;
+			return 2;
+		}
+		if (myClass == "D" || myClass == "D-" || myClass ==  "D+"){
+//			classUnit = 1;
+			return 1;
+		}
+		if (myClass == "F"){
+//			classUnit = 0;
+			return 0;
+		}
+	}
+
+	function gpaCalc(){
+		var unit1 = ConvertGrade(calc.Class1.value);
+		console.log(unit1);
+		var unit2 = ConvertGrade(calc.Class2.value);
+		console.log(unit2);
+		var unit3 = ConvertGrade(calc.Class3.value);
+		console.log(unit3);
+		var unit4 = ConvertGrade(calc.Class4.value);
+		console.log(unit4);
+		var unit5 = ConvertGrade(calc.Class5.value);
+		console.log(unit5);
+		var unit6 = ConvertGrade(calc.Class6.value);
+		console.log(unit6);
+		var unit7 = ConvertGrade(calc.Class7.value);
+		console.log(unit7);
+
+
+		var gpa = (Number(unit1) + Number(unit2) + Number(unit3) + Number(unit4) + Number(unit5) + Number(unit6) + Number(unit7))/7;
+		calc.GPA.value = gpa;
+	}
+	function eraseFields(){
+		calc.Class1.value = "";
+		calc.Class2.value = "";
+		calc.Class3.value = "";
+		calc.Class4.value = "";
+		calc.Class5.value = "";
+		calc.Class6.value = "";
+		calc.Class7.value = "";
+		calc.GPA.value = "";
+	}
+	</script>
+</head>
+
+<body>
+	<CENTER>
+		<h1>My Gpa Calculator</h1>
+		<ul>
+  			<li><a class="active" href="GamingSite.html">Gaming Center</a></li>
+  			<li><a href="https://lifeacademyoak.org/">Life Academy Oakland</a></li>
+  			<li><a href="http://www.hiddengeniusproject.org/">Hidden Genius Project</a></li>
+  			<li><a href="https://www.nba.com/warriors/">Golden State Warriors</a></li>
+		</ul>
+		<h2><p>Type the letter grades of your classes in the corresponding box. NOTE: This Program is case sensitive so make sure to capitalize letters.</p></h2>
+	<form name = "calc">
+
+		Geometry P: 
+		<br><input type = "text" name = "Class1"><br>
+		Algebra 1 P: 
+		<br><input type = "text" name = "Class2"><br>
+		Health Bio Sci: 
+		<br><input type = "text" name = "Class3"><br>
+		Biology P: 
+		<br><input type = "text" name = "Class4"><br>
+		English 1 P: 
+		<br><input type = "text" name = "Class5"><br>
+		Pathway Seminar: 
+		<br><input type = "text" name = "Class6"><br>
+		Advisory: 
+		<br><input type = "text" name = "Class7"><br>
+		<br>
+		<input type = "button" name = "button1" value= "Calculate Gpa" onclick = "gpaCalc();">
+		<input type = "button" name = "button2" value= "Erase Info"onclick = "eraseFields();">
+
+		<br>
+		<br><input type = "text" name = "GPA"><br>
+	</CENTER>
+	</form>
+</body>
+</html>
