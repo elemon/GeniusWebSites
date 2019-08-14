@@ -1,2 +1,2 @@
 # GeniusWebSites
-The Hidden Genius Project Oak7 Genius's Web Sites
+The Hidden Genius Project Oak7 Web Sites
